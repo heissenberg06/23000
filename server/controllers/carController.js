@@ -2,11 +2,15 @@ const db = require('../database.js');
 
 exports.addCar = (req, res) => {
     const { name, year } = req.body;
-    const photo = req.file.buffer;  // Access the image file buffer
+    const photo = req.file ? req.file.buffer : null;  // Ensure the file is received
+    if (!photo) {
+        return res.status(400).send({ message: 'No photo provided' });
+    }
     const sql = 'INSERT INTO cars (name, year, photo) VALUES (?, ?, ?)';
     db.query(sql, [name, year, photo], (err, result) => {
         if (err) {
-            return res.status(500).send({ message: 'Error adding car', error: err });
+            console.error('Error adding car:', err);
+            return res.status(500).send({ message: 'Error adding car', error: err.message });
         }
         res.status(201).send({ message: 'Car added successfully', carId: result.insertId });
     });

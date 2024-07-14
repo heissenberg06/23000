@@ -11,10 +11,16 @@ function UploadCar() {
         formData.append('name', name);
         formData.append('year', year);
         formData.append('photo', photo);
-
+    
+        // Retrieve the token from localStorage
+        const token = localStorage.getItem('authToken'); // Ensure the token is being saved in localStorage on login
+    
         try {
             const response = await fetch('http://localhost:3001/api/cars', {
                 method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                },
                 body: formData,  // formData will be the payload for the request
             });
             if (response.ok) {
@@ -22,13 +28,14 @@ function UploadCar() {
                 alert('Car added successfully: ' + result.carId);
                 // Reset form or redirect as necessary
             } else {
-                throw new Error('Failed to add car');
+                const errorResponse = await response.json();
+                throw new Error(errorResponse.message || 'Failed to add car');
             }
         } catch (error) {
             alert('Error: ' + error.message);
         }
     };
-
+    
     return (
         <div>
             <h1>Upload New Car</h1>

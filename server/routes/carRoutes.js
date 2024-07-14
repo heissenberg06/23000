@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const storage = multer.memoryStorage();  // stores files in memory
+const storage = multer.memoryStorage();  
 const upload = multer({ storage: storage });
 const carController = require('../controllers/carController');
+const verifyToken = require('../middleware/authMiddleware'); // Adjust path as necessary
 
-// Route to add a new car, now with image handling
-router.post('/cars', upload.single('photo'), carController.addCar);
+// Route to add a new car, now with authentication required
+router.post('/cars', verifyToken, upload.single('photo'), carController.addCar);
 
-// Routes for other car operations
-router.put('/cars/:id', upload.single('photo'), carController.updateCar);  // Assuming you might also update the image
-router.delete('/cars/:id', carController.deleteCar);
-router.get('/cars', carController.getCars);
+// Apply verifyToken to other routes as necessary
+router.put('/cars/:id', verifyToken, upload.single('photo'), carController.updateCar);
+router.delete('/cars/:id', verifyToken, carController.deleteCar);
+router.get('/cars', carController.getCars); // Assuming you want this public, if not, apply verifyToken here as well
 
 module.exports = router;
