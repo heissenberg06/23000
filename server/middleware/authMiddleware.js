@@ -7,7 +7,7 @@ const verifyToken = (req, res, next) => {
 
         jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
             if (err) {
-                return res.status(403).json({ message: 'Token is not valid' });
+                return res.status(403).json({ message: 'İlan açabilmek için giriş yapmanız gerekmektedir.' });
             }
 
             req.user = user;
