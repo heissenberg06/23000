@@ -1,19 +1,64 @@
+.container {
+    width: 100%; /* Use full viewport width */
+    max-width: 1200px; /* Set a max width for larger screens */
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
 .car-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack elements vertically */
     gap: 20px;
-    justify-content: center;
 }
 
 .car {
+    display: flex;
+    align-items: center;
     border: 1px solid #ccc;
     padding: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    width: 300px;
-    text-align: center;
+    width: 100%;
+    gap: 20px; /* Added gap between image and text */
 }
 
 .car img {
-    max-width: 100%;
-    height: auto;
+    width: 150px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    object-fit: cover; /* Ensure the image covers the area, might crop */
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.car-info {
+    flex-grow: 1;
+    overflow: hidden; /* Prevents text overflow */
+}
+
+.car h2, .car p {
+    margin: 0;
+    white-space: nowrap; /* Keeps text on one line */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis when text overflows */
+}
+
+.car p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.car:hover {
+    background-color: #f5f5f5; /* Subtle hover effect */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
 }

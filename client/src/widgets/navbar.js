@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <Link to="/home">Home</Link>
+      <Link to="/">Home</Link>
       <Link to="/sales">Sales</Link>
       <Link to="/upload">New Car</Link>
       <div className="right-links">
