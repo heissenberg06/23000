@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './loginpage.css';
-import About from '../widgets/about/about';
+import About from '../widgets/about';
 import axios from 'axios'; // Import Axios
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { useAuth } from '../contexts/authContext'; // Import useAuth

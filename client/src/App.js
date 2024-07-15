@@ -4,7 +4,7 @@ import HomePage from './pages/homepage';
 import LoginPage from './pages/loginpage';
 import RegisterPage from './pages/registerpage';
 import ProfilePage from './pages/profilepage'; // Import the ProfilePage component
-import NavBar from './widgets/navbar/navbar';
+import NavBar from './widgets/navbar';
 import { AuthProvider } from './contexts/authContext';
 import CarsForSale from './pages/CarsForSale';
 import UploadCar from './pages/AddingCarPage';
@@ -15,7 +15,7 @@ const App = () => {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/profile" element={<ProfilePage />} />

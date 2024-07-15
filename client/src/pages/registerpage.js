@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './registerpage.css'; // Import the CSS for styling
-import About from '../widgets/about/about'; // Adjust the path as necessary
+import About from '../widgets/about'; // Adjust the path as necessary
 import axios from 'axios'; // Import Axios
 import { useNavigate } from 'react-router-dom';
 
