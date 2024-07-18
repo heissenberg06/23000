@@ -1,0 +1,53 @@
+.details-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.image-container {
+    flex: 1 1 50%;
+    padding-right: 20px;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.details {
+    flex: 1 1 50%;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.year {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.loading,
+.error,
+.no-car {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.error {
+    color: red;
+}

@@ -5,6 +5,7 @@ function UploadCar() {
     const [name, setName] = useState('');
     const [year, setYear] = useState('');
     const [photo, setPhoto] = useState(null);
+    const [description, setDescription] = useState('');  // New state for description
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -12,7 +13,8 @@ function UploadCar() {
         formData.append('name', name);
         formData.append('year', year);
         formData.append('photo', photo);
-    
+        formData.append('description', description);  // Add description to formData
+
         const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
     
         try {
@@ -29,6 +31,7 @@ function UploadCar() {
                 setName('');  // Reset name
                 setYear('');  // Reset year
                 setPhoto(null);  // Reset photo
+                setDescription('');  // Reset description
             } else {
                 const errorResponse = await response.json();
                 throw new Error(errorResponse.message || 'Failed to add car');
@@ -68,6 +71,15 @@ function UploadCar() {
                         type="file"
                         onChange={(e) => setPhoto(e.target.files[0])}
                         required
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Description:</label>
+                    <textarea
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        required
+                        rows="3"
                     />
                 </div>
                 <button type="submit">Upload Car</button>
