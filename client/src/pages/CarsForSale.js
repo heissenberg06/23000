@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './CarsForSale.css';
+import DetailsPage from './DetailsPage';
 
 function CarsForSale() {
     const [cars, setCars] = useState([]);
@@ -42,7 +43,6 @@ function CarsForSale() {
 
     return (
         <div className="container">
-            <h1>Cars for Sale</h1>
             <input 
                 type="text" 
                 placeholder="Search by name or year..." 

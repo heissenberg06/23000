@@ -13,5 +13,7 @@ router.post('/cars', verifyToken, upload.single('photo'), carController.addCar);
 router.put('/cars/:id', verifyToken, upload.single('photo'), carController.updateCar);
 router.delete('/cars/:id', verifyToken, carController.deleteCar);
 router.get('/cars', carController.getCars); // Assuming you want this public, if not, apply verifyToken here as well
+router.get('/cars/:id', carController.getCarById); // No authentication applied, adjust if necessary
+
 
 module.exports = router;

@@ -57,3 +57,23 @@ exports.deleteCar = (req, res) => {
         }
     });
 };
+
+exports.getCarById = (req, res) => {
+    const { id } = req.params;  // Extract the ID from the request parameters
+    const sql = 'SELECT * FROM cars WHERE id = ?';
+    db.query(sql, [id], (err, results) => {
+        if (err) {
+            console.error('Error fetching car:', err);
+            return res.status(500).send({ message: 'Error fetching car', error: err.message });
+        }
+        if (results.length > 0) {
+            const car = {
+                ...results[0],
+                photo: results[0].photo ? `data:image/jpeg;base64,${Buffer.from(results[0].photo).toString('base64')}` : null
+            };
+            res.status(200).send(car);
+        } else {
+            res.status(404).send({ message: 'Car not found' });
+        }
+    });
+};

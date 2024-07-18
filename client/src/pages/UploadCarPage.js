@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './UploadCarPage.css';  // Import the CSS file for styling
 
 function UploadCar() {
     const [name, setName] = useState('');
@@ -12,8 +13,7 @@ function UploadCar() {
         formData.append('year', year);
         formData.append('photo', photo);
     
-        // Retrieve the token from localStorage
-        const token = localStorage.getItem('authToken'); // Ensure the token is being saved in localStorage on login
+        const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
     
         try {
             const response = await fetch('http://localhost:3001/api/cars', {
@@ -21,12 +21,14 @@ function UploadCar() {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 },
-                body: formData,  // formData will be the payload for the request
+                body: formData,
             });
             if (response.ok) {
                 const result = await response.json();
                 alert('Car added successfully: ' + result.carId);
-                // Reset form or redirect as necessary
+                setName('');  // Reset name
+                setYear('');  // Reset year
+                setPhoto(null);  // Reset photo
             } else {
                 const errorResponse = await response.json();
                 throw new Error(errorResponse.message || 'Failed to add car');
@@ -35,12 +37,12 @@ function UploadCar() {
             alert('Error: ' + error.message);
         }
     };
-    
+
     return (
-        <div>
+        <div className="upload-container">
             <h1>Upload New Car</h1>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="form-group">
                     <label>Name:</label>
                     <input
                         type="text"
@@ -49,16 +51,18 @@ function UploadCar() {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Year:</label>
                     <input
-                        type="text"
+                        type="number"
                         value={year}
                         onChange={(e) => setYear(e.target.value)}
                         required
+                        min="1886"  // The year the first car was invented
+                        max={new Date().getFullYear()}  // Current year
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Photo:</label>
                     <input
                         type="file"

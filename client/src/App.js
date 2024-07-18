@@ -7,7 +7,8 @@ import ProfilePage from './pages/profilepage'; // Import the ProfilePage compone
 import NavBar from './widgets/navbar';
 import { AuthProvider } from './contexts/authContext';
 import CarsForSale from './pages/CarsForSale';
-import UploadCar from './pages/AddingCarPage';
+import UploadCar from './pages/UploadCarPage';
+import DetailsPage from './pages/DetailsPage';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path='/sales' element={<CarsForSale/>} />
           <Route path='/upload' element={<UploadCar/>} />
+          <Route path="/car/:id" element={<DetailsPage />} />  {/* Route for individual car details */}
         </Routes>
       </Router>
     </AuthProvider>
