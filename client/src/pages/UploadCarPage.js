@@ -6,6 +6,8 @@ function UploadCar() {
     const [year, setYear] = useState('');
     const [photo, setPhoto] = useState(null);
     const [description, setDescription] = useState('');  // New state for description
+    const [km, setKm] = useState('');
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -14,6 +16,7 @@ function UploadCar() {
         formData.append('year', year);
         formData.append('photo', photo);
         formData.append('description', description);  // Add description to formData
+        formData.append('km', km);
 
         const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
     
@@ -32,6 +35,7 @@ function UploadCar() {
                 setYear('');  // Reset year
                 setPhoto(null);  // Reset photo
                 setDescription('');  // Reset description
+                setKm('');
             } else {
                 const errorResponse = await response.json();
                 throw new Error(errorResponse.message || 'Failed to add car');
@@ -63,6 +67,15 @@ function UploadCar() {
                         required
                         min="1886"  // The year the first car was invented
                         max={new Date().getFullYear()}  // Current year
+                    />
+                </div>
+                <div className="form-group">
+                    <label>KM:</label>
+                    <input
+                        type="number"
+                        value={km}
+                        onChange={(e) => setKm(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="form-group">
