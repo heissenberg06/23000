@@ -51,9 +51,16 @@ const DetailsPage = () => {
                 <p className="description">
                     Description: {car.description ? car.description : 'No description provided'}
                 </p>
+                <p className='km'> KM: {car.km}</p>
+                <p className='km'> Model: {car.model}</p>
+                <p className='km'> Power: {car.power}</p>
+                <p className='km'> Fuel: {car.fuel}</p>
             </div>
         </div>
     );
 };
 
 export default DetailsPage;
+
+
+//name, year, photo, description, km, model, power, fuel

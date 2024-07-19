@@ -7,7 +7,9 @@ function UploadCar() {
     const [photo, setPhoto] = useState(null);
     const [description, setDescription] = useState('');  // New state for description
     const [km, setKm] = useState('');
-
+    const [model, setModel] = useState('');
+    const [power, setPower] = useState('');
+    const [fuel, setFuel] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -17,6 +19,9 @@ function UploadCar() {
         formData.append('photo', photo);
         formData.append('description', description);  // Add description to formData
         formData.append('km', km);
+        formData.append('model', model);
+        formData.append('power', power);
+        formData.append('fuel', fuel);
 
         const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
     
@@ -36,6 +41,9 @@ function UploadCar() {
                 setPhoto(null);  // Reset photo
                 setDescription('');  // Reset description
                 setKm('');
+                setModel('');
+                setPower('');
+                setFuel('');
             } else {
                 const errorResponse = await response.json();
                 throw new Error(errorResponse.message || 'Failed to add car');
@@ -78,6 +86,37 @@ function UploadCar() {
                         required
                     />
                 </div>
+
+                <div className="form-group">
+                    <label>Model:</label>
+                    <input
+                        type="text"
+                        value={model}
+                        onChange={(e) => setModel(e.target.value)}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Power:</label>
+                    <input
+                        type="number"
+                        value={power}
+                        onChange={(e) => setPower(e.target.value)}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Fuel:</label>
+                    <input
+                        type="text"
+                        value={fuel}
+                        onChange={(e) => setFuel(e.target.value)}
+                        required
+                    />
+                </div>
+
                 <div className="form-group">
                     <label>Photo:</label>
                     <input
