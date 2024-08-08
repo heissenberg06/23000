@@ -1,22 +1,21 @@
-/* about.css */
 .about-container {
-    padding: 20px 50px; /* Increased padding for better spacing */
-    margin-top: auto; /* Pushes footer to the bottom */
+    padding: 40px 0; /* Uniform padding for vertical alignment */
     background-color: #f8f9fa; /* Light grey background */
-    border-top: 1px solid #dee2e6; /* Adds a subtle border line on top */
-    color: #495057; /* Sets the text color */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Adds shadow to the top of the footer */
-    width: 100%; /* Ensures it takes full width */
-    min-height: 100px; /* Minimum height */
-    max-height: 300px; /* Maximum height, adjust as needed */
-    overflow: auto; /* Adds scrollbars if content overflows */
+    border-top: 1px solid #dee2e6; /* Subtle top border for separation */
+    color: #495057; /* Dark grey text color for better contrast */
+    text-align: center; /* Center align the text */
+    width: 100%; /* Full width to align with page layout */
+    box-sizing: border-box; /* Ensures padding does not affect the width */
 }
 
-.about-container h1 {
+.about-container .title {
     color: #343a40; /* Dark grey color for the heading */
-    margin-bottom: 10px; /* Adds space below the heading */
+    margin-bottom: 20px; /* More space below the heading */
+    font-size: 24px; /* Larger font size for the title */
 }
 
-.about-container p {
-    font-size: 14px; /* Sets font size for the paragraph */
+.about-container .paragraph {
+    font-size: 16px; /* Slightly larger font size for better readability */
+    margin: 0 20px; /* Horizontal margin for text padding */
+    line-height: 1.6; /* Improved line height for reading comfort */
 }

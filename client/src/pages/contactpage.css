@@ -1,0 +1,28 @@
+.contact-container {
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center; /* Center align the text */
+    width: 80%; /* You can adjust the width as needed */
+    max-width: 800px; /* Maximum width of the container */
+}
+
+.contact-container h1, .contact-container h2 {
+    color: #333;
+}
+
+.contact-container p, .contact-container li {
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-container li {
+    padding: 8px 0;
+}

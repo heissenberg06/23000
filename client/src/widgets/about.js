@@ -1,6 +1,5 @@
-// About.js in src/widgets/
 import React from 'react';
-import './about.css';  // Import the CSS for styling
+import './about.css'; // Ensure the file name matches the CSS file
 
 const About = () => {
   return (

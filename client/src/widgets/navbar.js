@@ -11,7 +11,7 @@ const NavBar = () => {
       <Link to="/">Home</Link>
       <Link to="/sales">Sales</Link>
       <Link to="/upload">New Car</Link>
-      <Link to="/about">About</Link> {/* Added About link */}
+      <Link to="/contact">Contact</Link> {/* Added About link */}
       <div className="right-links">
         {isLoggedIn ? (
           <>
