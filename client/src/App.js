@@ -9,6 +9,7 @@ import { AuthProvider } from './contexts/authContext';
 import CarsForSale from './pages/CarsForSale';
 import UploadCar from './pages/UploadCarPage';
 import DetailsPage from './pages/DetailsPage';
+import AboutPage from './pages/aboutpage';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/about" element={<AboutPage/>} />
           <Route path='/sales' element={<CarsForSale/>} />
           <Route path='/upload' element={<UploadCar/>} />
           <Route path="/car/:id" element={<DetailsPage />} />  {/* Route for individual car details */}
