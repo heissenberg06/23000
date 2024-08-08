@@ -43,6 +43,9 @@ const LoginPage = () => {
             <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
           <button type="submit">Login</button>
+          <div className="forgot-password">
+            <a href="#">Forgot Password?</a> {/* This is a placeholder link */}
+          </div>
         </form>
         {message && <p>{message}</p>} {/* Display messages */}
       </div>

@@ -2,13 +2,16 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../database'); // Adjust path as needed
 const verifyToken = require('../middleware/authMiddleware'); // Ensure path is correct
-const { getUserProfile, updateUserProfile } = require('../controllers/userController');
+const { getUserProfile, updateUserProfile, changeUserPassword } = require('../controllers/userController');
 
 // Get user profile
 router.get('/profile', verifyToken, getUserProfile);
 
 // Update user profile
 router.put('/profile', verifyToken, updateUserProfile);
+
+// Change password
+router.post('/change-password', verifyToken, changeUserPassword);
 
 // Route to validate the user's token
 router.get('/validate-token', verifyToken, (req, res) => {
