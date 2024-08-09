@@ -97,3 +97,18 @@ exports.getCarById = (req, res) => {
         }
     });
 };
+
+exports.getUserCars = (req, res) => {
+    const userId = req.user.userId;
+    const sql = 'SELECT * FROM cars WHERE caruserId = ?';
+    db.query(sql, [userId], (err, results) => {
+        if (err) {
+            return res.status(500).send({ message: 'Error retrieving user cars', error: err });
+        }
+        const carsWithImages = results.map(car => ({
+            ...car,
+            photo: car.photo ? `data:image/jpeg;base64,${Buffer.from(car.photo).toString('base64')}` : null
+        }));
+        res.status(200).send(carsWithImages);
+    });
+};

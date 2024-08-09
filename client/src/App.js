@@ -10,6 +10,7 @@ import CarsForSale from './pages/CarsForSale';
 import UploadCar from './pages/UploadCarPage';
 import DetailsPage from './pages/DetailsPage';
 import ContactPage from './pages/contactpage';
+import CarManagementPage from './pages/CarManagementPage';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage/>} />
           <Route path='/sales' element={<CarsForSale/>} />
           <Route path='/upload' element={<UploadCar/>} />
+          <Route path="/manage-cars" element={<CarManagementPage />} />
           <Route path="/car/:id" element={<DetailsPage />} />  {/* Route for individual car details */}
         </Routes>
       </Router>
