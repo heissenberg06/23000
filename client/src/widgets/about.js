@@ -4,13 +4,9 @@ import './about.css'; // Ensure the file name matches the CSS file
 const About = () => {
   return (
     <div className="about-container">
-      <h1 className='title'>About Our Company</h1>
+      <h1 className='title'>Şirketimiz Hakkında</h1>
       <p className='paragraph'>
-        Our Company is committed to delivering exceptional software solutions. We specialize in creating 
-        scalable and robust applications tailored to meet the diverse needs of our clients. With a focus 
-        on innovation and quality, we aim to provide the best digital experiences and support to ensure 
-        the success of your projects.
-      </p>
+      Firmamız olağanüstü yazılım çözümleri sunmayı taahhüt eder. Müşterilerimizin farklı ihtiyaçlarını karşılamak üzere uyarlanmış ölçeklenebilir ve sağlam uygulamalar oluşturma konusunda uzmanız. Yeniliğe ve kaliteye odaklanarak, projelerinizin başarısını sağlamak için en iyi dijital deneyimleri ve desteği sağlamayı hedefliyoruz.      </p>
     </div>
   );
 };

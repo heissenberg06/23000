@@ -34,10 +34,10 @@ const RegisterPage = () => {
   return (
     <div className="page-container">
       <div className="register-container">
-        <h1>Register</h1>
+        <h1>Kaydol</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Kullanıcı Adı:</label>
             <input
               type="text"
               id="username"
@@ -57,7 +57,7 @@ const RegisterPage = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Şifre:</label>
             <input
               type="password"
               id="password"
@@ -67,7 +67,7 @@ const RegisterPage = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="confirmPassword">Confirm Password:</label>
+            <label htmlFor="confirmPassword">Şifre Tekrar:</label>
             <input
               type="password"
               id="confirmPassword"
@@ -76,7 +76,7 @@ const RegisterPage = () => {
               required
             />
           </div>
-          <button type="submit">Register</button>
+          <button type="submit">Kaydol</button>
         </form>
         {message && <p>{message}</p>} {/* Display message */}
       </div>

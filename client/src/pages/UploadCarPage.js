@@ -10,6 +10,7 @@ function UploadCar() {
     const [model, setModel] = useState('');
     const [power, setPower] = useState('');
     const [fuel, setFuel] = useState('');
+    const [brand, setBrand] = useState('')
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -22,6 +23,7 @@ function UploadCar() {
         formData.append('model', model);
         formData.append('power', power);
         formData.append('fuel', fuel);
+        formData.append('brand', brand)
 
         const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
     
@@ -44,6 +46,7 @@ function UploadCar() {
                 setModel('');
                 setPower('');
                 setFuel('');
+                setBrand('');
             } else {
                 const errorResponse = await response.json();
                 throw new Error(errorResponse.message || 'Failed to add car');
@@ -55,10 +58,10 @@ function UploadCar() {
 
     return (
         <div className="upload-container">
-            <h1>Upload New Car</h1>
+            <h1>İlan Ver</h1>
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label>Name:</label>
+            <div className="form-group">
+                    <label>Başlık:</label>
                     <input
                         type="text"
                         value={name}
@@ -66,8 +69,18 @@ function UploadCar() {
                         required
                     />
                 </div>
+
                 <div className="form-group">
-                    <label>Year:</label>
+                    <label>Marka:</label>
+                    <input
+                        type="text"
+                        value={brand}
+                        onChange={(e) => setBrand(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Yıl:</label>
                     <input
                         type="number"
                         value={year}
@@ -78,7 +91,7 @@ function UploadCar() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>KM:</label>
+                    <label>Kilometre:</label>
                     <input
                         type="number"
                         value={km}
@@ -98,7 +111,7 @@ function UploadCar() {
                 </div>
 
                 <div className="form-group">
-                    <label>Power:</label>
+                    <label>Beygir Gücü:</label>
                     <input
                         type="number"
                         value={power}
@@ -108,7 +121,7 @@ function UploadCar() {
                 </div>
 
                 <div className="form-group">
-                    <label>Fuel:</label>
+                    <label>Yakıt:</label>
                     <input
                         type="text"
                         value={fuel}
@@ -118,7 +131,7 @@ function UploadCar() {
                 </div>
 
                 <div className="form-group">
-                    <label>Photo:</label>
+                    <label>Fotoğraf:</label>
                     <input
                         type="file"
                         onChange={(e) => setPhoto(e.target.files[0])}
@@ -126,7 +139,7 @@ function UploadCar() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Description:</label>
+                    <label>Açıklama:</label>
                     <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
@@ -134,7 +147,7 @@ function UploadCar() {
                         rows="3"
                     />
                 </div>
-                <button type="submit">Upload Car</button>
+                <button type="submit">İlan Ver</button>
             </form>
         </div>
     );

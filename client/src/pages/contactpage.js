@@ -4,14 +4,14 @@ import './contactpage.css'; // Ensure the file name matches the CSS file
 const ContactPage = () => {
     return (
         <div className="contact-container">
-            <h1>About Us</h1>
-            <p>Welcome to our website! We are dedicated to providing the best services to our community.</p>
-            <h2>Contact Us</h2>
-            <p>If you have any questions, please don't hesitate to contact us:</p>
+            <h1>Hakkımızda</h1>
+            <p>Web sitemize hoş geldiniz! Topluluğumuza en iyi hizmeti sunmaya adadık.</p>
+            <h2>İletişim</h2>
+            <p>Herhangi bir sorunuz varsa, lütfen bizimle iletişime geçmekten çekinmeyin:</p>
             <ul>
-                <li>Email: contact@example.com</li>
-                <li>Phone: (123) 456-7890</li>
-                <li>Address: 123 Main St, City, State, 90001</li>
+                <li>Email: mustafavardan@gmail.com</li>
+                <li>Phone: +90 543 210 0123</li>
+                <li>Address: Bostanlı/İzmir</li>
             </ul>
         </div>
     );

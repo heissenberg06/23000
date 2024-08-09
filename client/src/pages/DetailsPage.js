@@ -44,21 +44,26 @@ const DetailsPage = () => {
         <div className="details-container">
             <div className="image-container">
                 <img src={car.photo} alt={`Photo of ${car.name}`} className="image" />
+                <div className="details">
+                    <h1 className="title">{car.name}</h1>
+                    <p className="brand">Marka: {car.brand}</p>
+                    <p className="model">Model: {car.model}</p>
+                    <p className='km'>KM: {car.km}</p>
+                    <p className='year'>Model: {car.year}</p>
+                    <p className='power'>Beygir Gücü: {car.power}</p>
+                    <p className='fuel'>Yakıt: {car.fuel}</p>
+                    <p className='owner'>Araç Sahibi: {car.ownerUsername}</p>
+                </div>
             </div>
-            <div className="details">
-                <h1 className="title">{car.name}</h1>
-                <p className="year">Year: {car.year}</p>
-                <p className="description">
-                    Description: {car.description ? car.description : 'No description provided'}
-                </p>
-                <p className='km'>KM: {car.km}</p>
-                <p className='model'>Model: {car.model}</p>
-                <p className='power'>Power: {car.power}</p>
-                <p className='fuel'>Fuel: {car.fuel}</p>
-                <p className='owner'>Owner: {car.ownerUsername}</p>
-            </div>
+            <div className="description-container">
+            <h1 className="title">Açıklama</h1>
+            <p className="description">
+                {car.description ? car.description : 'No description provided'}
+            </p>
+        </div>
+
         </div>
     );
-};
+                };
 
 export default DetailsPage;

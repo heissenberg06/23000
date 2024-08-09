@@ -32,19 +32,19 @@ const LoginPage = () => {
   return (
     <div className="page-container">
       <div className="login-container">
-        <h1>Login</h1>
+        <h1>Giriş Yap</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Kullanıcı Adı :</label>
             <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Şifre:</label>
             <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit">Giriş Yap</button>
           <div className="forgot-password">
-            <a href="#">Forgot Password?</a> {/* This is a placeholder link */}
+            <a href="#">Şifremi unuttum.</a> {/* This is a placeholder link */}
           </div>
         </form>
         {message && <p>{message}</p>} {/* Display messages */}

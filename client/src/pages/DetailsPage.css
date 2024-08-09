@@ -1,35 +1,62 @@
 .details-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    background: #fff; /* Adds a light background */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds shadow for depth */
+    border-radius: 10px; /* Rounded corners */
 }
 
 .image-container {
-    flex: 1 1 50%;
-    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center align items vertically */
+    width: 100%;
+    padding: 20px; /* Padding inside the container */
+    border-bottom: 1px solid #ccc; /* Separator */
 }
 
 .image {
-    width: 100%;
+    width: 40%; /* Reduced width for better proportion */
     height: auto;
-    border-radius: 10px;
+    border-radius: 5px; /* Slightly rounded corners for the image */
 }
 
 .details {
-    flex: 1 1 50%;
+    width: 60%;
+    padding-left: 20px; /* Space between image and details */
+    text-align: left; /* Align text to the left */
 }
 
 .title {
-    margin-bottom: 10px;
+    font-size: 1.75rem; /* Larger title */
+    color: #333; /* Darker color for better readability */
+    font-weight: bold; /* Make the title bold */
+    margin-bottom: 0.5rem; /* Space below the title */
 }
 
 .description {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
+    width: 100%; /* Full width description */
+    padding: 20px; /* Padding around the description */
+    background: #f9f9f9; /* Light background for the description box */
+    margin-top: 20px; /* Space above the description */
+    border-radius: 5px; /* Rounded corners for the description box */
+    text-align: center; /* Center-align the text */
 }
 
+/* Styling for other properties like brand, model etc. */
+.detail-property {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0; /* Spacing between each property */
+}
+
+/* Improved loading, error, and no-car styles */
 .loading,
 .error,
 .no-car {
@@ -39,9 +66,9 @@
     height: 100vh;
     font-size: 1.5rem;
     text-align: center;
-    margin-top: 20px;
+    color: #555; /* Neutral color for text */
 }
 
 .error {
-    color: red;
+    color: #d33; /* Red color for errors */
 }

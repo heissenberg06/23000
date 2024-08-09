@@ -8,10 +8,10 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <Link to="/">Home</Link>
-      <Link to="/sales">Sales</Link>
-      <Link to="/upload">New Car</Link>
-      <Link to="/contact">Contact</Link> {/* Added About link */}
+      <Link to="/">Ana Sayfa</Link>
+      <Link to="/sales">İlanlar</Link>
+      <Link to="/upload">İlan Ver</Link>
+      <Link to="/contact">İletişim</Link> {/* Added About link */}
       <div className="right-links">
         {isLoggedIn ? (
           <>
@@ -20,8 +20,8 @@ const NavBar = () => {
           </>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <Link to="/login">Giriş Yap</Link>
+            <Link to="/register">Kaydol</Link>
           </>
         )}
       </div>

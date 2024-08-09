@@ -6,17 +6,17 @@ const HomePage = () => {
     return (
         <div>
             <div className="hero-section">
-                <h1 className='h1class'>Welcome to Our Trusted Second-Hand Car Marketplace!</h1>
-                <p>Find your perfect car with us.</p>
-                <Link to="/sales" className="btn btn-primary">View Featured Cars</Link>
+                <h1 className='h1class'>Türkiye'nin 2. el Araç Deposu!</h1>
+                <p>Hayalindeki arabayı bizimle bul.</p>
+                <Link to="/sales" className="btn btn-primary">İlanlara Git</Link>
             </div>
             <div className="search-section">
                 {/* Search component goes here */}
             </div>
             <div className="about-brief">
-                <h2>Contact Us</h2>
-                <p>Learn more about our commitment to quality and customer service.</p>
-                <Link to="/contact" className="btn btn-secondary">Learn More</Link>
+                <h2>Bize ulaş</h2>
+                <p>Herhangi bir sorun oluşması durumunda müşteri hizmetleri 7/24 aktiftir.</p>
+                <Link to="/contact" className="btn btn-secondary">Daha Fazla</Link>
             </div>
             <div className="special-offers">
                 {/* Special offers component */}
@@ -25,12 +25,12 @@ const HomePage = () => {
                 {/* Testimonials component */}
             </div>
             <div className="latest-news">
-                <h2>Latest News</h2>
+                <h2>Yeni Haberler</h2>
                 {/* News articles or blog posts listed here */}
             </div>
             <div className="newsletter-signup">
-                <h2>Stay Updated</h2>
-                <p>Sign up for our newsletter to receive the latest car listings and special offers.</p>
+                <h2>Güncel Kal</h2>
+                <p>En yeni otomobil haberleri ve özel teklifler için kaydolun!</p>
                 {/* Signup form */}
             </div>
             <div className="footer">

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './CarsForSale.css';
-import DetailsPage from './DetailsPage';
 
 function CarsForSale() {
     const [cars, setCars] = useState([]);
@@ -30,7 +29,7 @@ function CarsForSale() {
     // Handle filtering
     useEffect(() => {
         const results = cars.filter(car =>
-            car.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            (car.name?.toLowerCase().includes(searchTerm.toLowerCase()) || false) ||
             car.year.toString().includes(searchTerm)
         );
         setFilteredCars(results);
@@ -45,7 +44,7 @@ function CarsForSale() {
         <div className="container">
             <input 
                 type="text" 
-                placeholder="Search by name or year..." 
+                placeholder="Araç arayın..." 
                 value={searchTerm} 
                 onChange={(e) => setSearchTerm(e.target.value)} 
                 style={{ margin: '10px 0', padding: '10px', width: '100%' }}
@@ -53,10 +52,11 @@ function CarsForSale() {
             <div className="car-list">
                 {filteredCars.map(car => (
                     <div key={car.id} className="car" onClick={() => handleCardClick(car.id)} style={{ cursor: 'pointer' }}>
-                        <img src={car.photo} alt={car.name} />
+                        <img src={car.photo} alt={car.name || 'Car Image'} />
                         <div className="car-info">
-                            <h2>{car.name}</h2>
-                            <p>Year: {car.year}</p>
+                            <h2>{car.name || 'Unnamed Car'}</h2>
+                            <p>Marka: {car.brand}</p>
+                            <p>Yıl: {car.year}</p>
                         </div>
                     </div>
                 ))}
