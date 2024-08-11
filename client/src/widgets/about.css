@@ -1,8 +1,8 @@
 .about-container {
     padding: 40px 0; /* Uniform padding for vertical alignment */
-    background-color: #f8f9fa; /* Light grey background */
+    background-color: #7FA1C3; /* Light grey background */
     border-top: 1px solid #dee2e6; /* Subtle top border for separation */
-    color: #495057; /* Dark grey text color for better contrast */
+    color: #ffffff; /* Dark grey text color for better contrast */
     text-align: center; /* Center align the text */
     width: 100%; /* Full width to align with page layout */
     box-sizing: border-box; /* Ensures padding does not affect the width */
@@ -19,3 +19,4 @@
     margin: 0 20px; /* Horizontal margin for text padding */
     line-height: 1.6; /* Improved line height for reading comfort */
 }
+

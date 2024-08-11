@@ -11,7 +11,6 @@ const NavBar = () => {
       <Link to="/">Ana Sayfa</Link>
       <Link to="/sales">İlanlar</Link>
       <Link to="/upload">İlan Ver</Link>
-      <Link to="/manage-cars">anan</Link>
       <Link to="/contact">İletişim</Link> {/* Added About link */}
       <div className="right-links">
         {isLoggedIn ? (

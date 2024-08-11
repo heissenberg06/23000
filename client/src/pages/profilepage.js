@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './profilepage.css'; // Import CSS for styling
 
 const ProfilePage = () => {
@@ -8,6 +9,8 @@ const ProfilePage = () => {
     const [newPassword, setNewPassword] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+
+    const navigate = useNavigate(); // Initialize the navigate function
 
     useEffect(() => {
         const fetchUserDetails = async () => {
@@ -58,6 +61,11 @@ const ProfilePage = () => {
         }
     };
 
+    // Handle navigation to the management page
+    const handleNavigateToManagement = () => {
+        navigate('/manage-cars'); // Use the correct path for your management page
+    };
+
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
@@ -67,7 +75,7 @@ const ProfilePage = () => {
             <p>Username: {userDetails.username}</p>
             <p>Email: {userDetails.email}</p>
             {!showPasswordChange ? (
-                <button onClick={() => setShowPasswordChange(true)}>Change Password</button>
+                <button onClick={() => setShowPasswordChange(true)}>Hesap Şifremi Değiştir</button>
             ) : (
                 <form onSubmit={handlePasswordChange}>
                     <label>
@@ -91,6 +99,7 @@ const ProfilePage = () => {
                     <button type="submit">Update Password</button>
                 </form>
             )}
+            <button onClick={handleNavigateToManagement}>İlanlarım</button>
         </div>
     );
 };
